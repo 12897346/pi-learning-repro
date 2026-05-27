@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-05-09T13:10:57.178548+08:00",
+  "data_provenance": "stack_pores4thought_tifs: slice-dir 本层; proxy_formula（非 OpenFOAM；未传 --labels-j-npy）",
+  "arrays": {
+    "volumes.npy": {
+      "shape": [
+        2,
+        1,
+        64,
+        64,
+        64
+      ]
+    },
+    "labels_j.npy": {
+      "shape": [
+        2,
+        7
+      ]
+    },
+    "tpb.npy": {
+      "shape": [
+        2,
+        1
+      ]
+    }
+  },
+  "output_spec": {
+    "output_spec_version": "1.0",
+    "paper_reference": "Adv. Energy Mater. 2023, 2300244 (π-learning)",
+    "labels_j": {
+      "shape_suffix": "[N, 7]",
+      "quantity": "current_density_J",
+      "unit": "mA cm^-2",
+      "axis_eta_mV": [
+        20,
+        40,
+        60,
+        80,
+        100,
+        120,
+        140
+      ],
+      "axis_note": "第 i 列对应 eta_mv[i]；与 OpenFOAM 孔隙尺度模型在同一参考面积定义下提取。论文印刷一处将七个 η 写成「20,40,60,80,120,140 mV」漏写 100 mV；本仓库与 Fig.7 / 常用七档采样一致，保留 100 mV。"
+    },
+    "tpb": {
+      "shape_suffix": "[N, 1]",
+      "quantity": "active_tpb_density_proxy",
+      "unit": "与 src.physics.tpb_logic 中 active_tpb_density_from_label_volume 定义一致（无量纲密度代理）"
+    },
+    "volumes": {
+      "shape_suffix": "[N, 1, D, H, W]",
+      "phase_voxel_values": {
+        "pore": 0,
+        "ni": 128,
+        "ysz": 255
+      },
+      "note": "与论文 Experimental Section 三相灰度编码一致；D=H=W=64 时为论文体素块尺寸"
+    },
+    "openfoam_export_npy": {
+      "phase_npy": "0/128/255 三相，经 _nearest_map 与 phase-values 对齐",
+      "phi_ion_npy": "离子势场；量纲须与 ParaView/OpenFOAM 导出时所用场定义一致，本仓库不自动换算"
+    }
+  },
+  "extra": {
+    "script": "scripts/stack_pores4thought_tifs_to_bundle.py",
+    "slice_dir_used": "C:\\Users\\32245\\OneDrive\\Desktop\\pi-learning--data\\anode-segmented\\anode_segmented",
+    "num_patches": 2,
+    "patch_size": 64,
+    "seed": 99,
+    "strict_z": false,
+    "recursive": false,
+    "crop_manifest": "crop_manifest.json"
+  }
+}

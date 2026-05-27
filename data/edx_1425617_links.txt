@@ -1,0 +1,12 @@
+SOFC Microstructures (PFIB-SEM and synthetic) from JPS 2018
+DOI: 10.18141/1425617
+Dataset slug: sofc-microstructures-hsu-epting-mahbub-jps-2018
+
+https://edx.netl.doe.gov/storage/f/edx/2018/03/2018-03-13T15:25:22.261Z/25660524-5937-4657-bbc8-a86eb6e6d163/anode-greyscale.zip
+https://edx.netl.doe.gov/storage/f/edx/2018/03/2018-03-13T15:25:22.283Z/0253f0df-5ad0-49b9-983f-ff2773c19884/anode-segmented.zip
+https://edx.netl.doe.gov/storage/f/edx/2018/03/2018-03-13T15:25:22.297Z/00fb8920-8159-4fa7-95d2-626b26764209/cathode-greyscale.zip
+https://edx.netl.doe.gov/storage/f/edx/2018/03/2018-03-13T15:25:22.306Z/8eed7209-e68b-4232-94cc-0b66c61f43f0/cathode-segmented.zip
+https://edx.netl.doe.gov/storage/f/edx/2018/03/2018-03-13T15:25:22.313Z/ab58d286-90e0-4300-b9fa-5be290057f5e/synth-015.zip
+https://edx.netl.doe.gov/storage/f/edx/2018/03/2018-03-13T15:25:22.319Z/c516b041-cb46-4832-ba41-ce005fa2b597/synth-035.zip
+https://edx.netl.doe.gov/storage/f/edx/2018/03/2018-03-13T15:25:22.325Z/1c0147dc-f9e2-4d1a-a5af-95130047af70/synth-060.zip
+https://edx.netl.doe.gov/storage/f/edx/2018/03/2018-03-13T15:25:22.331Z/27a41c86-a36d-4afd-9fea-cb4e9b14fc61/synth-080.zip

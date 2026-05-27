@@ -1,0 +1,32 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# 训练产物与大数据（用集群或本机重新生成）
+outputs/
+logs/
+*.pth
+*.pt
+*.ckpt
+data/**/*.npy
+data/processed/
+data/processed_fallback/
+
+# 环境与密钥
+.env
+.env.*
+*.pem
+
+# IDE / 系统
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# 论文 PDF 体积大，默认不上传（需要可去掉下一行或改用 Git LFS）
+*.pdf

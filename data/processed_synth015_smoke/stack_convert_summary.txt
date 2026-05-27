@@ -1,0 +1,6 @@
+=== 转换完成 ===
+out: C:\Users\32245\OneDrive\Desktop\pi-learning\data\processed_synth015_smoke
+slice_inventory: C:\Users\32245\OneDrive\Desktop\pi-learning\data\processed_synth015_smoke\slice_inventory.json
+volumes: (2, 1, 64, 64, 64)
+tpb: (2, 1)
+labels_j: (2, 7) (proxy_formula（非 OpenFOAM；未传 --labels-j-npy）)

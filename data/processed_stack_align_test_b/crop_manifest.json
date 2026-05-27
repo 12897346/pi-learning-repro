@@ -1,0 +1,20 @@
+[
+  {
+    "z_start_logical": 59,
+    "z_start_index_in_stack": 58,
+    "dy": 826,
+    "dx": 1391,
+    "patch_size": 64,
+    "z_end_logical": 122,
+    "patch_index": 0
+  },
+  {
+    "z_start_logical": 35,
+    "z_start_index_in_stack": 34,
+    "dy": 290,
+    "dx": 940,
+    "patch_size": 64,
+    "z_end_logical": 98,
+    "patch_index": 1
+  }
+]

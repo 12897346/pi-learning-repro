@@ -1,0 +1,12 @@
+numpy
+scipy
+matplotlib
+pandas
+scikit-learn
+tqdm
+pyyaml
+h5py
+tifffile
+torch
+torchvision
+pyvista>=0.43.0

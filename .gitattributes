@@ -1,0 +1,2 @@
+# Slurm/bash 在 Linux 上必须为 LF，否则 sbatch 报错 DOS line breaks
+*.sh text eol=lf

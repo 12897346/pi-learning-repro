@@ -1,0 +1,96 @@
+project:
+  name: pi-learning-repro
+  paper_doi: 10.1002/aenm.202300244
+
+data:
+  image_size: [64, 64, 64]
+  image_channels: 3
+  phase_values:
+    pore: 0
+    ni: 128
+    ysz: 255
+
+gan:
+  debug_tiny: false
+  latent_channels: 16
+  latent_shape: [4, 4, 4]
+  classes_inverse: 3
+  classes_forward: 1
+  embedding_size: 320
+  batch_size: 8
+  critic_updates_per_g: 5
+  lambda_gp: 10.0
+  gamma_phys: 1.0
+  learning_rate: 1.0e-4
+  adam_betas: [0.5, 0.9]
+  tiny_channels:
+    generator: [64, 32, 16, 8]
+    critic: [64, 32, 16, 8]
+  paper_channels:
+    generator: [512, 256, 128, 64]
+    critic: [512, 256, 128, 64]
+
+phys_cnn:
+  in_channels: 1
+  channels: [256, 128, 64, 32, 1]
+  learning_rate: 1.0e-3
+  adam_betas: [0.5, 0.9]
+  batch_size: 32
+  # Adv. Energy Mater. 2023, 2300244 正文：phys-CNN 约 70 epoch 收敛（MAE）
+  train_epochs: 70
+
+phys_dnn:
+  input_size: 1
+  output_size: 7
+  hidden_layers: 2
+  hidden_dim: 50
+  learning_rate: 1.0e-3
+  adam_betas: [0.5, 0.9]
+  batch_size: 8
+  # 同上：phys-DNN 约 100 epoch
+  train_epochs: 100
+
+pso:
+  c1: 2.0
+  c2: 2.0
+  w: 0.8
+  particles: 200
+  prior_samples: 400
+  # PSO 平台早停：gbest_J 单次迭代提升 < plateau_tol（mA/cm²）计为「无实质改善」，非要求完全相等
+  plateau_tol: 1.0e-3
+  # 正文「最优 J 连续 200 次迭代不变」；patience 会按 pso_iterations 比例缩放且不超过 --iters
+  plateau_patience: 200
+
+paper_repro:
+  # 工程快速复现默认（不追求正文 epoch/PSO 规模）；要贴论文可改回 1000/300/1000 等
+  normal_pretrain_epochs: 200
+  physics_finetune_epochs: 80
+  pso_iterations: 50
+  gan_tpb_mode: fast
+  phys_connectivity_mode: fast
+  phys_train_epochs: 50
+  eval_strict_tpb_at_end: true
+  # paper 通道 GAN 在 24GB 上建议 batch<=4；tiny 可用 8
+  gan_batch_size: 4
+  gan_batch_size_tiny: 8
+  gan_force_tiny: true
+
+  # ---- phys surrogate 早停（数值集中在此；正文未给「平台」整数判据，下列为常见监督学习启发式，跑完 metrics.json 后再标定）----
+  # phys-DNN：正文叙述 MAE 收敛到约 1 以下（Experimental Section）；非 SI 表格字面量。
+  phys_dnn_val_mae_early_stop: 1.0
+  # val MAE 平台：连续 patience 个 epoch 相对历史最优改善 < min_delta 则停（与 batch/量纲有关，仅作首轮试跑默认）。
+  phys_surrogate_plateau_patience: 8
+  phys_surrogate_plateau_min_delta: 1.0e-5
+
+  # ---- GAN：正文判据为 Wasserstein steady + 目测；下列为 WGAN-GP 训练中常见的「滑动批均值方差」代理，首轮试跑后按 gan_exit_*.json / CSV 再调。----
+  gan_wdist_early_stop:
+    window: 7
+    std_tol: 0.03
+    patience: 6
+
+  # physics 阶段第二标量：c_loss epoch 批均值在同一 window 内 std < 该阈值且与 w_dist 同判稳 streak（正文未给数值，属工程常见量级；不对则改 YAML）。
+  gan_physics_closs_std_tol: 0.08
+
+  # 每 N epoch 写 GAN 中间切片 PNG（0=关闭）；首轮可保持 0，需要目测时再改为 50 或与 --save-every 同量级。
+  # PSO 最优 3D 表面图：run_paper 上传 --export-pso-surface iso（或 both）；默认 matplotlib 后端，无头节点无需 OSMesa；光滑面见 --export-surface-backend pyvista 与 slurm 注释。
+  gan_preview_every: 0

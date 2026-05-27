@@ -1,0 +1,42 @@
+{
+  "z_min": 1,
+  "z_max": 124,
+  "n_slices": 124,
+  "hw": [
+    1697,
+    1900
+  ],
+  "shape_check": {
+    "first": [
+      1697,
+      1900
+    ],
+    "mid": [
+      1697,
+      1900
+    ],
+    "last": [
+      1697,
+      1900
+    ]
+  },
+  "strict_z": false,
+  "slice_dir_requested": "C:\\Users\\32245\\OneDrive\\Desktop\\pi-learning--data\\anode-segmented\\anode_segmented",
+  "slice_dir_used": "C:\\Users\\32245\\OneDrive\\Desktop\\pi-learning--data\\anode-segmented\\anode_segmented",
+  "resolve_note": "slice-dir 本层",
+  "recursive": false,
+  "filenames_head": [
+    "anode_segmented_tiff_z001.tif",
+    "anode_segmented_tiff_z002.tif",
+    "anode_segmented_tiff_z003.tif",
+    "anode_segmented_tiff_z004.tif",
+    "anode_segmented_tiff_z005.tif"
+  ],
+  "filenames_tail": [
+    "anode_segmented_tiff_z120.tif",
+    "anode_segmented_tiff_z121.tif",
+    "anode_segmented_tiff_z122.tif",
+    "anode_segmented_tiff_z123.tif",
+    "anode_segmented_tiff_z124.tif"
+  ]
+}

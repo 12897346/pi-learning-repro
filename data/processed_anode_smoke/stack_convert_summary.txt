@@ -1,0 +1,7 @@
+=== 转换完成 ===
+输出: C:\Users\32245\OneDrive\Desktop\pi-learning\data\processed_anode_smoke
+volumes: (4, 1, 64, 64, 64)
+tpb: (4, 1) min=0.026344 max=0.031994
+labels_j: (4, 7) (proxy_formula（与 convert_generated_structures 一致，非 OpenFOAM）)
+下一步: Slurm/本地将 DATA_DIR 或 --data-dir 指向本目录即可训练。
+若已有 OpenFOAM 逐体素 J 标签，请自行替换 labels_j.npy 并在 manifest 中更新说明。

@@ -1,0 +1,29 @@
+[
+  {
+    "z_start_logical": 58,
+    "z_start_index_in_stack": 57,
+    "dy": 1021,
+    "dx": 1256,
+    "patch_size": 64,
+    "z_end_logical": 121,
+    "patch_index": 0
+  },
+  {
+    "z_start_logical": 55,
+    "z_start_index_in_stack": 54,
+    "dy": 944,
+    "dx": 1424,
+    "patch_size": 64,
+    "z_end_logical": 118,
+    "patch_index": 1
+  },
+  {
+    "z_start_logical": 51,
+    "z_start_index_in_stack": 50,
+    "dy": 367,
+    "dx": 102,
+    "patch_size": 64,
+    "z_end_logical": 114,
+    "patch_index": 2
+  }
+]

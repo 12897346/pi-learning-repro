@@ -1,0 +1,42 @@
+{
+  "z_min": 1,
+  "z_max": 120,
+  "n_slices": 120,
+  "hw": [
+    600,
+    600
+  ],
+  "shape_check": {
+    "first": [
+      600,
+      600
+    ],
+    "mid": [
+      600,
+      600
+    ],
+    "last": [
+      600,
+      600
+    ]
+  },
+  "strict_z": false,
+  "slice_dir_requested": "C:\\Users\\32245\\OneDrive\\Desktop\\pi-learning--data\\synth_015",
+  "slice_dir_used": "C:\\Users\\32245\\OneDrive\\Desktop\\pi-learning--data\\synth_015",
+  "resolve_note": "slice-dir 本层",
+  "recursive": false,
+  "filenames_head": [
+    "synth_015_z001.tif",
+    "synth_015_z002.tif",
+    "synth_015_z003.tif",
+    "synth_015_z004.tif",
+    "synth_015_z005.tif"
+  ],
+  "filenames_tail": [
+    "synth_015_z116.tif",
+    "synth_015_z117.tif",
+    "synth_015_z118.tif",
+    "synth_015_z119.tif",
+    "synth_015_z120.tif"
+  ]
+}
