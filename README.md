@@ -32,15 +32,9 @@ pip install -r requirements.txt
 python scripts/check_env.py
 ```
 
-### C. 第 1 步验收标准
+### C. 验收标准
 
 - 能打印 Python、PyTorch、NumPy、CUDA 信息
 - 不报错退出（退出码 0）
 
-## 后续输入（你需要提供）
 
-为了进入第 2 步，请你确认以下至少一项：
-
-- 有可用 3D 多相微结构数据（例如你已有的 `npy/h5` 数据）
-- 或你希望我先用“模拟数据”搭一套完整训练管线
-- 或你已申请到作者数据/补充材料关键表格
